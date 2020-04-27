@@ -1,0 +1,2 @@
+module ElevatorMediaHelper
+end

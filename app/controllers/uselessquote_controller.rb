@@ -1,0 +1,2 @@
+class UselessquoteController < ApplicationController
+end

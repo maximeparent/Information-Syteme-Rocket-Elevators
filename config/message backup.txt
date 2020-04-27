@@ -1,0 +1,3 @@
+"Hello Technician, this is Rocket Elevators' automated text message system. 
+                The elevator: #{ele_id} , inside building: #{building_id} , is in need of your service.
+                Its current status has been set to #{new_status}."

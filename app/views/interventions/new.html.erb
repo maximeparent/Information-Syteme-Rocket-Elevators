@@ -1,0 +1,62 @@
+<!-------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------  SUBMISSION FORM PART ---------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------> 
+
+<%= javascript_include_tag 'interventionpage.js' %>    
+<section>
+	<div id="mainForm">
+		<div id="mainDiv" class="container-fuild">			
+			<h1>Add Intervention</h1>
+
+			<%= bootstrap_form_with(model: @intervention, local: true) do |f| %>
+			
+			
+				<%= f.select(:customer_id, Customer.all.collect {|c| [c.company_name + " ( id: " + c.id.to_s + " )", c.id] }, { include_blank: true }, { id: :customer_list }) %>
+
+				<div class="hide_select" id="building_show">
+					<%= f.select(:building_id,[],  { include_blank: true }, { id: :building_list })%>
+				</div>
+
+				<div class="hide_select" id="battery_show">
+					<%= f.select(:battery_id,[], { include_blank: true }, { id: :battery_list })%>
+				</div>
+
+				<div class="hide_select" id="column_show">
+					<%= f.select(:column_id, [], { include_blank: true }, { id: :column_list })%>
+				</div>
+
+				<div class="hide_select" id="elevator_show">
+					<%= f.select(:elevator_id, [], { include_blank: true }, { id: :elevator_list })%>
+				</div>
+
+				<div id="employee_show">
+					<%= f.select(:employee_id, Employee.all.collect {|e| [e.email.to_s , e.id]}, { include_blank: true })%>
+				</div>
+
+				<div>
+					<%= f.text_area :intervention_report,{:size => "34x5"} %>
+				</div>
+				
+				<div class="field">
+    			<%= flash[:recaptcha_error] %>
+    			<%= recaptcha_tags %>
+  				</div>
+
+				<br>
+				<div>
+					<%= f.submit "Submit", class: "btn btn-primary"%>
+				</div>
+
+		
+			<% end %>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+
+
