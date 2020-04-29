@@ -23,6 +23,10 @@ Rails.application.routes.draw do
   get 'welcome' => 'watson#welcome'
   get 'intervention' => 'intervention#new'
   get 'useless' => 'pages#useless'
+
+  #AI & Machine learning
+  get 'speakers' => 'speakers#enrollment'
+  get 'speakers' => 'speakers#identification'
   
    resources :interventions do
     post :building_select, on: :collection

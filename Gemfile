@@ -37,11 +37,6 @@ gem "rspec-rails", :group => [:development, :test]
 
 
 
-
-
-
-
-
 # bootstrap 
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
