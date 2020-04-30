@@ -327,6 +327,13 @@ ActiveAdmin.setup do |config|
   # You can inherit it with own class and inject it for all resources
   #
   # config.order_clause = MyOrderClause
+
+  config.namespace :admin do |admin|
+    admin.build_menu :default do |menu|
+      menu.add label: "Machine Learning", url: "speakers/index", html_options: { target: :blank }
+  
+    end
+  end
   ActiveAdmin.setup do |config|
     config.comments = false
   end
