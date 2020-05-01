@@ -11,7 +11,17 @@
 # a separate helper file that requires the additional dependencies and performs
 # the additional setup, and require it from the spec files that actually need
 # it.
-#
+
+# Load and launch SimpleCov at the very top of your spec_helper.rb
+# Note: If SimpleCov starts after your application code is already loaded (via require), it won't be able to track your files and their coverage! 
+# The SimpleCov.start must be issued before any of your application code is required!
+require 'simplecov'
+SimpleCov.start
+
+# require 'html_validation'
+# include PageValidations
+
+
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
