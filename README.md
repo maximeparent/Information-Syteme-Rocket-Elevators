@@ -12,6 +12,9 @@ To do so, we applied **Azure's Cognitive Services on Microsoft Azure platform.**
 
 ### PATH FOR THE ML FILES:
 
+### The Goal 
+The objective was to identify our referenced speaker (has registered voiceprint) in a recorded audio with the Speaker ID API and also get results about the not referenced speakers.
+
 Code for Speaker Recognition:
 ```
 |-- **app**
@@ -70,13 +73,13 @@ https://www.getpostman.com/collections/800b8cd0e6ba8b4dd15c
 https://www.postman.com/collections/ec3df443ec49fd70b099
 
 
-### TDD test
+### Test-Driven-Development (TDD)
 
-We made a TDD test with our new speakers controller form the beginning to help our work. Please find the path and the executable test below.
+We implimented some TDD tests for our new speakers controller form the beginning to help our work.
 
-PATH TO THE TEST FILE ```spec/speakers_spec.rb```
+Path in the Rails App => ```spec/controllers/speakers_spec.rb```
 
-EXECUTABLE TEST: ```rspec spec/speakers_spec.rb```
+Command to execute the RSpec => ```rspec ./spec/controllers/speakers_spec.rb```
 
 COVERAGE
 
