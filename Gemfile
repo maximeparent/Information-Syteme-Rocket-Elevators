@@ -36,7 +36,7 @@ gem 'better_errors', '~> 2.5', '>= 2.5.1'
 gem "rspec-rails", :group => [:development, :test]
 
 
-
+gem "binding_of_caller"
 # bootstrap 
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'

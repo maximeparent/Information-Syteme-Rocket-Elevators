@@ -1,7 +1,13 @@
 class SpeakersController < ApplicationController
+    before_action :authenticate_employee!
+
     require 'net/http'
     require 'json'
+    
+    def index
 
+    end
+    
     # First Step is to create the profile
     # Will return an Identification Id to Enroll
     def createProfile
@@ -56,3 +62,12 @@ end
 
 
 
+    def upload
+        # code to upload the audio file
+    end 
+    def display
+        # code to diplay the text
+    end 
+  
+
+end
