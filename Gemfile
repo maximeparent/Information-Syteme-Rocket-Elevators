@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 #Aesthetics
 gem "active_material", github: "vigetlabs/active_material"
 gem "recaptcha", require: "recaptcha/rails"
-gem 'better_errors', '~> 2.5', '>= 2.5.1'
+#gem 'better_errors', '~> 2.5', '>= 2.5.1'
 gem "rspec-rails", :group => [:development, :test]
 
 
@@ -120,3 +120,5 @@ gem 'phonelib'
 gem 'ibm_watson'
 gem 'dropbox_api'
 gem 'dotenv'
+gem 'azure-storage-blob'
+gem 'carrierwave', '~> 2.0'

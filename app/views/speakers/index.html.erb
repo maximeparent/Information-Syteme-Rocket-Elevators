@@ -1,8 +1,10 @@
-<p>speaker</p>
+
 
 <%# html form%>
 
-<div>
+<%
+=begin%>
+ <div>
   <form enctype="multipart/form-data" name="upload" action="speakers/upload" method="POST" >
 
     <input name="uploadfile" type="file" multiple>
@@ -12,9 +14,56 @@
    
   </form>
 
-</div>
+</div> 
+<%
+=end%>
 
+ 
+<!DOCTYPE html>
+<html>
+    <head>
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    </head>
 
+    <body>
+
+        <div class="container" >
+
+          <div style="align=center">
+          <h1>Rocket Elevators Machine learning</h1>
+          </div> <br>
+              <div class="col-md-4" > 
+                  <%= form_for :speakers, url: speakers_index_url, direct_upload: true, :multipart => true  do |f| %>
+
+                    <fieldset>
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+
+                                <label for="audiofile1">Upload the conversation's audio file here</label>
+
+                                <%= file_field_tag "file1", class: 'custom-file-upload', type: "file", direct_upload: true, id: 'audiorecordID' %>
+                                <small class="text-muted block">Max file size: 100Mb</small>
+                                <%= f.hidden_field :avatar_cache %>
+
+                            <%= submit_tag "  Upload  " %>
+
+                            </div>
+
+                          </div>
+
+                    </fieldset>
+                  <% end %> 
+              </div>
+
+        </div>
+
+    </body>
+
+</html>
 
