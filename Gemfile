@@ -58,7 +58,7 @@ gem "chartkick"
 gem 'groupdate'
 gem "figaro"
 
-
+gem 'rails-controller-testing', '~> 0.0.3'
 
 # slack api
 gem 'slack-ruby-client'
