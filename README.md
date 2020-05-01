@@ -42,7 +42,7 @@ Code for Speaker Recognition:
 ```
 PATH TO THE AUDIOS ```/azure_conversation_analysis```
 
-PATH TO THE SPEAKERS PROFILE ```/azure_speaker_profiles```
+PATH TO THE SPEAKERS PROFILES ```/azure_speaker_profiles```
 
 PATH TO THE SPEAKERS CONTROLLER ```app/controllers/speakers_controller.rb```
 
@@ -54,7 +54,7 @@ We made a TDD test with our new speakers controller form the beginning to help o
 
 PATH ```spec/speakers_spec.rb```
 
-Executable test: ```rspec spec/speakers_spec.rb```
+EXECUTABLE TEST: ```rspec spec/speakers_spec.rb```
 
 COVERAGE
 
