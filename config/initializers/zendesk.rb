@@ -3,13 +3,13 @@ require 'zendesk_api'
 @client = ZendeskAPI::Client.new do |config|
   # Mandatory:
 
-  config.url = "https://rocketalexis.zendesk.com/api/v2" # e.g. https://mydesk.zendesk.com/api/v2
+  config.url = "https://crybaby.zendesk.com/api/v2" # e.g. https://mydesk.zendesk.com/api/v2
 
   # Basic / Token Authentication
   config.username = "thrifthshopdowntheroad@gmail.com/token"
 
   # Choose one of the following depending on your authentication choice
-  config.token = "nGtDx2PjX7kWxKKnWSR2crOs0lCxciML5XlFY0Kr"
+  config.token = "lqsfsaBM0NFS7pxYvsTUb2CnKKRAkSxRqMTe4yeS"
 
   # OAuth Authentication
   #config.access_token = "fc97c122167bbfc083997948973587aa3fba6aa1e41f4b8f5dbccabf9bd5bdeb"
