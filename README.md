@@ -3,6 +3,9 @@
 
 ## Speaker Recognition
 
+### The Goal 
+The objective was to identify our referenced speaker (has registered voiceprint) in a recorded audio with the Speaker ID API and also get results about the not referenced speakers.
+
 Code for Speaker Recognition:
 ```
 |-- **app**
@@ -48,13 +51,13 @@ PATH TO THE SPEAKERS CONTROLLER ```app/controllers/speakers_controller.rb```
 
 PATH TO THE SPEAKERS VIEW ```app/views/speakers/index.html.erb```
 
-### TDD test
+### Test-Driven-Development (TDD)
 
-We made a TDD test with our new speakers controller form the beginning to help our work. Please find the path and the executable test below.
+We implimented some TDD tests for our new speakers controller form the beginning to help our work.
 
-PATH ```spec/speakers_spec.rb```
+Path in the Rails App => ```spec/controllers/speakers_spec.rb```
 
-EXECUTABLE TEST: ```rspec spec/speakers_spec.rb```
+Command to execute the RSpec => ```rspec ./spec/controllers/speakers_spec.rb```
 
 COVERAGE
 
