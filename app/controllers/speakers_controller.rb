@@ -8,6 +8,7 @@ class SpeakersController < ApplicationController
     end
     
     @subscriptionKey = '2b9cb2c1a1e7424a9034683b34eacd7c'
+    @endpoint = "https://elevatorrecognition.cognitiveservices.azure.com/spid/v1.0"
 
     # First Step is to create the profile
     # Will return an Identification Id to Enroll
@@ -66,13 +67,11 @@ end
 
 
 
-    def upload
-        # code to upload the audio file
-    end 
+    # def upload
+    #     # code to upload the audio file
+    # end 
     
-    def display
-        # code to diplay the text
-    end 
+    # def display
+    #     # code to diplay the text
+    # end 
   
-
-end
