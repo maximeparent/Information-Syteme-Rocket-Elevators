@@ -1,18 +1,57 @@
-<p>speaker</p>
+
 
 <%# html form%>
 
-<div>
-  <form enctype="multipart/form-data" name="upload" action="speakers/upload" method="POST" >
 
-    <input name="uploadfile" type="file" multiple>
-    <p>Click to upload the audio file.</p>
-    <button type="submit" id="submit_txt" > Click to display the audio file script</button>
-    
-   
-  </form>
 
-</div>
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <div class="container" id="indentification_enrollement">
+
+          <div style="align=center">
+          <h2>Creating speaker profiles :</h2>
+          </div> <br>
+
+          <div class="col-md-4">
+                <div>        
+                    <h4>Indentification and Enrollement :</h4>
+                </div>
+                <%= form_for :speakers, url: speakers_upload_url, :multipart => true   do |f| %>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="audiorecord"></label>
+                                <!-- custom file upload -->
+                                <input class="custom-file-upload" type="file" id="file" name="audiorecord" id="audiorecord" data-btn-text="Select a File" />
+
+                                <small class="text-muted block">Max file size: 10Mb (wav)</small>
+                            </div>
+                        </div>
+                        <%= submit_tag "Upload the audio file" %>
+                    </fieldset>
+                <% end %> 
+            </div>    
+
+            <div>
+            
+            
+            </div>
+        
+      
+
+        </div>
+       
 
 <script>
 
@@ -30,5 +69,7 @@ $(document).ready(function(){
 </script>
 
 
+    </body>
 
+</html>
 
