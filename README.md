@@ -9,13 +9,13 @@ Just as passengers consent to being filmed using our elevators, they are informe
 
 To do so, we applied **Azure's Cognitive Services on Microsoft Azure platform.**
 
-
-### PATH FOR THE ML FILES:
+## Speaker identification
 
 ### The Goal 
 The objective was to identify our referenced speaker (has registered voiceprint) in a recorded audio with the Speaker ID API and also get results about the not referenced speakers.
 
-Code for Speaker Recognition:
+### PATH FOR THE ML FILES:
+
 ```
 |-- **app**
 |   |-- admin
@@ -46,19 +46,21 @@ Code for Speaker Recognition:
 |   |-- requests
 |   |-- routing
 |   |-- views
-|   `-- **speakers_spec.rb**
+|   |-- controllers
+|       `-- **speakers_spec.rb**
 |-- storage
 |-- test
 |-- tmp
 `-- vendor
 ```
-PATH TO THE AUDIOS AND TEXT FILES ```/azure_conversation_analysis```
+PATH TO THE AUDIOS & TEXT FILES  ```/azure_conversation_analysis```
 
-PATH TO THE SPEAKERS PROFILES ```/azure_speaker_profiles```
+PATH TO THE SPEAKERS PROFILES  ```/azure_speaker_profiles```
 
-PATH TO THE SPEAKERS CONTROLLER ```app/controllers/speakers_controller.rb```
+PATH TO THE SPEAKERS CONTROLLER  ```app/controllers/speakers_controller.rb```
 
-PATH TO THE SPEAKERS VIEW ```app/views/speakers/index.html.erb```
+PATH TO THE SPEAKERS VIEW   ```app/views/speakers/index.html.erb```
+
 
 ### POSTMAN tests
 
@@ -73,6 +75,7 @@ https://www.getpostman.com/collections/800b8cd0e6ba8b4dd15c
 https://www.postman.com/collections/ec3df443ec49fd70b099
 
 
+
 ### Test-Driven-Development (TDD)
 
 We implimented some TDD tests for our new speakers controller form the beginning to help our work.
@@ -85,15 +88,20 @@ COVERAGE
 
 We implemented SimpleCov, the code coverage analysis tool for Ruby. As it gitignored you can't open in your browser but you will see in our video. Code coverage is a measure which describes the degree of which the source code of the program has been tested. Better to implement this before write a code and continuously test then it will be close to 100%.
 
-Our result: Coverage report generated for RSpec to /mnt/c/Users/Agi Vizvari/Desktop/Rocket-Elevator-Foundation/coverage. 299 / 352 LOC (84.94%) covered.
+Our result: Coverage report generated for RSpec to /mnt/c/users/mykee/desktop/codeboxx/livrables/week-12/rocketelevators-ml/coverage. 348 / 641 LOC **(54.29%)** covered.
+
 
 ## Speech-To-Text
+
+### The Goal 
+The objective was to transcript the audio files that we used for the Speaker identification part, saved in .txt format.
+We wanted to see how precise is the result of the audio files where we speak at the same time, different languages and with different accents. 
 
 ### POSTMAN tests
 
 Here you can find our test's link, if you would like to import in Postman:
 
-**Postman "" collection:**
+**Postman "SpeechToText" collection:**
 
-
+https://www.getpostman.com/collections/77e431041852a83e2699
 
