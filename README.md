@@ -9,11 +9,6 @@ Just as passengers consent to being filmed using our elevators, they are informe
 
 To do so, we applied **Azure's Cognitive Services on Microsoft Azure platform.**
 
-## Speaker identification
-
-### The Goal 
-The objective was to identify our referenced speaker (has registered voiceprint) in a recorded audio with the Speaker ID API and also get results about the not referenced speakers.
-
 ### PATH FOR THE ML FILES:
 
 ```
@@ -62,6 +57,11 @@ PATH TO THE SPEAKERS CONTROLLER  ```app/controllers/speakers_controller.rb```
 PATH TO THE SPEAKERS VIEW   ```app/views/speakers/index.html.erb```
 
 
+## Speaker identification
+
+### The Goal 
+The objective was to identify our referenced speaker (has registered voiceprint) in a recorded audio with the Speaker ID API and also get results about the not referenced speakers.
+
 ### POSTMAN tests
 
 Here you can find our test's link, if you would like to import in Postman:
@@ -75,8 +75,15 @@ https://www.getpostman.com/collections/800b8cd0e6ba8b4dd15c
 https://www.postman.com/collections/ec3df443ec49fd70b099
 
 
+### EXTRA MILES
 
-### Test-Driven-Development (TDD)
+#### HTML PAGE
+
+An html page about Creating speaker profiles is added to the dashboard called machine learning... a model and a controller called Speakers is also added to the Ruby on Rails project... the code allow the creation of an identification and an enrolment of a new speaker.. to test it: upload an audio file (.wav) from the [./azure_conversation_analysis] folder, a speaker ID will be added and an enrolment is created.. You check the results either on the console or using postman.
+
+
+
+#### Test-Driven-Development (TDD)
 
 We implimented some TDD tests for our new speakers controller form the beginning to help our work.
 
@@ -105,3 +112,12 @@ Here you can find our test's link, if you would like to import in Postman:
 
 https://www.getpostman.com/collections/77e431041852a83e2699
 
+
+### EXTRA MILES
+
+#### TRANSCRIPTION VIEW IN THE APP
+
+Ruby file was created to view transcriptions in command line within rails app. 
+The ruby test goes through but as a translation from python, it doesn't display visible results... you can upload it to show the effort made to replicate it. The file should be in the same folder as the audio files. 
+
+Path in the Rails App => ```azure_conversation_analysis/viewtextinconsol.rb```
