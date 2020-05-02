@@ -97,6 +97,8 @@ GEM
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
     bindex (0.8.1)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     bootstrap (4.4.1)
@@ -150,6 +152,7 @@ GEM
     console (1.8.2)
     crass (1.0.6)
     date (3.0.0)
+    debug_inspector (0.0.3)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -157,6 +160,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
+    docile (1.3.2)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.5)
@@ -310,6 +314,8 @@ GEM
     rails-assets-datatables (1.10.19)
       rails-assets-jquery (>= 1.7.0)
     rails-assets-jquery (3.4.1)
+    rails-controller-testing (0.0.3)
+      rails (>= 4.2)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -383,6 +389,10 @@ GEM
       rubyzip (>= 1.2.2)
     sendgrid-ruby (6.1.2)
       ruby_http_client (~> 3.4)
+    simplecov (0.18.5)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+    simplecov-html (0.12.2)
     slack-notifier (2.3.2)
     slack-ruby-client (0.14.6)
       activesupport
@@ -446,6 +456,7 @@ DEPENDENCIES
   activeadmin
   async-websocket (~> 0.8.0)
   better_errors (~> 2.5, >= 2.5.1)
+  binding_of_caller
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.4.1)
   bootstrap_form (~> 4.0)
@@ -483,12 +494,14 @@ DEPENDENCIES
   rails (~> 5.2.4, >= 5.2.4.1)
   rails-assets-datatables!
   rails-assets-jquery!
+  rails-controller-testing (~> 0.0.3)
   recaptcha
   rspec-rails
   rvm1-capistrano3
   sass-rails (~> 5.0)
   selenium-webdriver
   sendgrid-ruby
+  simplecov
   slack-notifier
   slack-ruby-client
   spring

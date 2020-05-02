@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
   resources :elevator_media
   resources :interventions
   devise_for :users, :controllers => { :registrations => "users/registrations", :sessions => "users/sessions", :passwords => "users/passwords" }
@@ -23,7 +24,15 @@ Rails.application.routes.draw do
   get 'welcome' => 'watson#welcome'
   get 'intervention' => 'intervention#new'
   get 'useless' => 'pages#useless'
+
   get 'tts' => 'pages#tts'
+
+
+  #AI & Machine learning
+  get 'speakers' => 'speakers#enrollment'
+  get 'speakers' => 'speakers#identification'
+  get  'speakers/index'
+
   
    resources :interventions do
     post :building_select, on: :collection
