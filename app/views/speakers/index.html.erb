@@ -2,21 +2,7 @@
 
 <%# html form%>
 
-<%
-=begin%>
- <div>
-  <form enctype="multipart/form-data" name="upload" action="speakers/upload" method="POST" >
 
-    <input name="uploadfile" type="file" multiple>
-    <p>Click to upload the audio file.</p>
-    <button type="submit" id="submit_txt" > Click to display the audio file script</button>
-    
-   
-  </form>
-
-</div> 
-<%
-=end%>
 
  
 <!DOCTYPE html>
@@ -31,37 +17,43 @@
 
     <body>
 
-        <div class="container" >
+        <div class="container" id="indentification_enrollement">
 
           <div style="align=center">
-          <h1>Rocket Elevators Machine learning</h1>
+          <h2>Creating speaker profiles :</h2>
           </div> <br>
-              <div class="col-md-4" > 
-                  <%= form_for :speakers, url: speakers_index_url, direct_upload: true, :multipart => true  do |f| %>
 
+          <div class="col-md-4">
+                <div>        
+                    <h4>Indentification and Enrollement :</h4>
+                </div>
+                <%= form_for :speakers, url: speakers_upload_url, :multipart => true   do |f| %>
                     <fieldset>
-
                         <div class="row">
-
                             <div class="col-md-12">
+                                <label for="audiorecord"></label>
+                                <!-- custom file upload -->
+                                <input class="custom-file-upload" type="file" id="file" name="audiorecord" id="audiorecord" data-btn-text="Select a File" />
 
-                                <label for="audiofile1">Upload the conversation's audio file here</label>
-
-                                <%= file_field_tag "file1", class: 'custom-file-upload', type: "file", direct_upload: true, id: 'audiorecordID' %>
-                                <small class="text-muted block">Max file size: 100Mb</small>
-                                <%= f.hidden_field :avatar_cache %>
-
-                            <%= submit_tag "  Upload  " %>
-
+                                <small class="text-muted block">Max file size: 10Mb (wav)</small>
                             </div>
-
-                          </div>
-
+                        </div>
+                        <%= submit_tag "Upload the audio file" %>
                     </fieldset>
-                  <% end %> 
-              </div>
+                <% end %> 
+            </div>    
+
+            <div>
+            
+            
+            </div>
+        
+      
 
         </div>
+       
+
+
 
     </body>
 

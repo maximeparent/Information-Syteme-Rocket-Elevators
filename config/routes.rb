@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :quote
   resources :leads
 
-  
+  post "/speakers/upload" => "speakers#upload"
   root 'leads#new'
 
   get 'index' => 'leads#new' # index
