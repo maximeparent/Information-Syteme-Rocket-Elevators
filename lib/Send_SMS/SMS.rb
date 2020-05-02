@@ -1,31 +1,31 @@
-require 'twilio-ruby'
-require 'json'
-require 'http'
+# require 'twilio-ruby'
+# require 'json'
+# require 'http'
 
-module SendSms
-    class Sms 
-        def initialize
-        end
+# module SendSms
+#     class Sms 
+#         def initialize
+#         end
         
-        def send_sms(ele_id, building_id, new_status)
-            account_sid = ENV['TWILIO_ACCOUNT_SID']
-            auth_token = ENV['TWILIO_AUTH_TOKEN']
-            client = Twilio::REST::Client.new(account_sid, auth_token)
+#         def send_sms(ele_id, building_id, new_status)
+#             account_sid = ENV['TWILIO_ACCOUNT_SID']
+#             auth_token = ENV['TWILIO_AUTH_TOKEN']
+#             client = Twilio::REST::Client.new(account_sid, auth_token)
             
-            from = ENV['TWILIO_PHONE_NUMBER']
-            to = ENV['TWILIO_PHONE_NUMBER_TO']
-            puts "sending msg"
-            client.messages.create(
-                from: from,
-                to: to,
-                body: "Hello Technician, this is Rocket Elevators' automated text message system. 
-                The elevator: #{ele_id} , inside building: #{building_id} , is in need of your service.
-                Its current status has been set to #{new_status}."
-            )
-            puts "msg sent?"
-        end
-    end
-end
+#             from = ENV['TWILIO_PHONE_NUMBER']
+#             to = ENV['TWILIO_PHONE_NUMBER_TO']
+#             puts "sending msg"
+#             client.messages.create(
+#                 from: from,
+#                 to: to,
+#                 body: "Hello Technician, this is Rocket Elevators' automated text message system. 
+#                 The elevator: #{ele_id} , inside building: #{building_id} , is in need of your service.
+#                 Its current status has been set to #{new_status}."
+#             )
+#             puts "msg sent?"
+#         end
+#     end
+# end
 
 
 

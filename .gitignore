@@ -34,4 +34,7 @@
 
 /vendor/cache
 
+/config/dwh_database.yml
+
 /coverage
+
