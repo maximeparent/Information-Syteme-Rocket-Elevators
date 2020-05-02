@@ -79,7 +79,9 @@ https://www.postman.com/collections/ec3df443ec49fd70b099
 
 #### HTML PAGE
 
-An html page about Creating speaker profiles is added to the dashboard called machine learning... a model and a controller called Speakers is also added to the Ruby on Rails project... the code allow the creation of an identification and an enrolment of a new speaker.. to test it: upload an audio file (.wav) from the [./azure_conversation_analysis] folder, a speaker ID will be added and an enrolment is created.. you check the results either on the console or using postman.
+An html page about Creating speaker profiles is added to the dashboard called machine learning... a model and a controller called Speakers is also added to the Ruby on Rails project... the code allow the creation of an identification and an enrolment of a new speaker.. to test it: upload an audio file (.wav) from the [./azure_conversation_analysis] folder, a speaker ID will be added and an enrolment is created.. You check the results either on the console or using postman.
+
+
 
 #### Test-Driven-Development (TDD)
 
@@ -110,3 +112,12 @@ Here you can find our test's link, if you would like to import in Postman:
 
 https://www.getpostman.com/collections/77e431041852a83e2699
 
+
+### EXTRA MILES
+
+#### TRANSCRIPTION VIEW IN THE APP
+
+Ruby file was created to view transcriptions in command line within rails app. 
+The ruby test goes through but as a translation from python, it doesn't display visible results... you can upload it to show the effort made to replicate it. The file should be in the same folder as the audio files. 
+
+Path in the Rails App => ```azure_conversation_analysis/viewtextinconsol.rb```
