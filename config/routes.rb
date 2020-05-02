@@ -25,10 +25,14 @@ Rails.application.routes.draw do
   get 'intervention' => 'intervention#new'
   get 'useless' => 'pages#useless'
 
+  get 'tts' => 'pages#tts'
+
+
   #AI & Machine learning
   get 'speakers' => 'speakers#enrollment'
   get 'speakers' => 'speakers#identification'
   get  'speakers/index'
+
   
    resources :interventions do
     post :building_select, on: :collection

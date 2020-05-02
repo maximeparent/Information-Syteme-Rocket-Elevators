@@ -9,13 +9,11 @@ class SpeakersController < ApplicationController
     require 'openssl'
     
     def index
-
     end
     
-    # First Step is to create the profile
-    # Will return an Identification Id to Enroll
+    @subscriptionKey = '2b9cb2c1a1e7424a9034683b34eacd7c'
+    @endpoint = "https://elevatorrecognition.cognitiveservices.azure.com/spid/v1.0"
 
-   
 
     def upload
 
@@ -65,18 +63,19 @@ class SpeakersController < ApplicationController
 
 
     end 
-  # mine: https://rocketelvatorsspeakerrecognition.cognitiveservices.azure.com/spid/v1.0
+    # mine: https://rocketelvatorsspeakerrecognition.cognitiveservices.azure.com/spid/v1.0
     # create a speaker profile
     def createProfile
             p "Creating the speaker profile ..."
             p "Key:"+'{2b9cb2c1a1e7424a9034683b34eacd7c}'
             uri = URI('https://elevatorrecognition.cognitiveservices.azure.com/spid/v1.0/identificationProfiles')
+    
         uri.query = URI.encode_www_form({
         })
 
         request = Net::HTTP::Post.new(uri.request_uri)
-        # Request headers
         request['Content-Type'] = 'application/json'
+
         # Request headers
         request['Ocp-Apim-Subscription-Key'] = '2b9cb2c1a1e7424a9034683b34eacd7c' # to be hidden
         # Request body
@@ -103,6 +102,7 @@ class SpeakersController < ApplicationController
             return File.binread(filePath)
         end
         
+
     end
 
     def getIdProfils(idsList) 
@@ -121,9 +121,7 @@ class SpeakersController < ApplicationController
             puts speakersIds.join(",")
             return speakersIds.join(",")
     end
-   
-
-    
+     
 
     
     # def self.createProfile
@@ -191,16 +189,22 @@ class SpeakersController < ApplicationController
     # puts response.body
     # end
 
+    def getOperationStatus(operationId)
+        uri = URI('https://elevatorrecognition.cognitiveservices.azure.com/spid/v1.0/operations/' + @operationId)
+        uri.query = URI.encode_www_form({
+        })
+        request = Net::HTTP::Get.new(uri.request_uri)
+        request['Ocp-Apim-Subscription-Key'] = @subscriptionKey
+        request.body = "{}"
+        response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+            http.request(request)
+        end
+        puts response.body
+    end
+
     def identification
         return 'hello'
     end
-
-    # def upload
-    #     # code to upload the audio file
-    # end 
-    # def display
-    #     # code to diplay the text
-    # end 
-  
-
 end
+
+
