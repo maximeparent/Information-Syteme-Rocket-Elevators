@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'welcome' => 'watson#welcome'
   get 'intervention' => 'intervention#new'
   get 'useless' => 'pages#useless'
+  get 'tts' => 'pages#tts'
   
    resources :interventions do
     post :building_select, on: :collection

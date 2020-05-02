@@ -33,3 +33,5 @@
 /config/application.yml
 
 /vendor/cache
+
+/config/dwh_database.yml

@@ -1,8 +1,14 @@
-class SpeechToTextController < ApplicationController
-
-require 'net/http'
+require 'http'
 require 'json'
-    def Uploadfile
+
+module TextToSpeach
+    class Upload
+        def initialize
+        
+        end
+
+        def self.uploadfile
+            require 'net/http'
             uri = URI('https://westus.api.cognitive.microsoft.com/speechtotext/v2.0/transcriptions')
             uri.query = URI.encode_www_form({
             })
@@ -23,10 +29,9 @@ require 'json'
             response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
                 http.request(request)
             end
-            speach = response.body
-            obj = JSON.parse(speach)['DisplayText']
-            puts obj
+            obj = JSON.parse(response.body)['DisplayText']
             text = "<div>#{obj}</div>"
             return text
+        end
     end
 end
