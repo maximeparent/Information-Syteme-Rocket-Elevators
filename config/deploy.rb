@@ -1,10 +1,20 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.12.0"
+lock "~> 3.14.0"
 
-before 'deploy', 'rvm1:install:ruby'
-set :rvm_map_bins, [ 'rake', 'gem', 'bundle', 'ruby', 'puma', 'pumactl' ]
-set :application, "Alexis_Grenier"
-set :repo_url, "https://github.com/Ticass/Rocket_Elevators_Foundation.git"
+# before 'deploy', 'rvm1:install:ruby'
+# set :rvm_map_bins, [ 'rake', 'gem', 'bundle', 'ruby', 'puma', 'pumactl' ]
+set :application, "Rocket_Elevators_Foundation"
+set :repo_url, "https://github.com/maximeparent/Rocket-Elevators.git"
+set :rvm_ruby_version, "ruby-2.6.5"
+set :rvm_ruby_string, :local
+set :deploy_to, "/home/ubuntu/deploy/#{fetch :application}"
+# set :pty, true
+# set :ssh_options, {
+#   forward_agent: true,
+#   auth_methods: %w[publickey],
+#   keys: %w[/home/alex/deploy/key.pem]
+# }
+set :keep_releases, 3
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -35,20 +45,19 @@ set :repo_url, "https://github.com/Ticass/Rocket_Elevators_Foundation.git"
 # set :local_user, -> { `git config user.name`.chomp }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-before "deploy:assets:precompile", "deploy:yarn_install"
+# before "deploy:assets:precompile", "deploy:yarn_install"
  
-namespace :deploy do
- desc 'Run rake yarn:install'
- task :yarn_install do
-   on roles(:web) do
-     within release_path do
-       execute("cd #{release_path} && yarn install")
-     end
-   end
- end
-end
+# namespace :deploy do
+#  desc 'Run rake yarn:install'
+#  task :yarn_install do
+#    on roles(:web) do
+#      within release_path do
+#        execute("cd #{release_path} && yarn install")
+#      end
+#    end
+#  end
+# end
